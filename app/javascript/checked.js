@@ -5,14 +5,14 @@ function check() {
       return null;
     }
     post.setAttribute("date-load", "true");
-    post.addEventListener("click", () =>{
+    post.addEventListener("click", () => {
       const postId = post.getAttribute("date-id");
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `/posts/${postId}`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
-        if (XHR.status !=200) {
+        if (XHR.status != 200) {
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
           return null;
         }
